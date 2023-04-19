@@ -33,9 +33,24 @@ function mostrarCarrito() {
     alert(salida);
 }
 
+function buscarProducto () {
+    let busqueda;
+    busqueda = prompt('Ingrese un articulo a buscar en el carrito');
+    const encontrado = productos.find((encontrado) => {
+        if (productos.nombre === 'busqueda')
+        {
+            return true;
+            alert("El producto esta en la lista");
+        }else {
+            return false;
+            alert("El producto no se cargo");
+        }
+});
+}
 
 bienvenido();
 cargaDatos();
+buscarProducto();
 mostrarCarrito();
 productos.forEach((item)=> {
     console.log(item);
