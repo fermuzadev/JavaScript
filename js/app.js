@@ -6,22 +6,39 @@ const boton4 = document.getElementById('boton4');
 const boton5 = document.getElementById('boton5');
 const boton6 = document.getElementById('boton6');
 const input = document.getElementById('input');
-const vaciar = document.getElementById('btnvaciar');
-const finalizar = document.getElementById('btnfinalizar')
+const btnVaciar = document.getElementById('btnvaciar');
+const btnFinalizar = document.getElementById('btnfinalizar')
 const tabla = document.getElementById('viajes');
 
 //Definicion de Array
 
 let viajes = JSON.parse(localStorage.getItem('viajes'));
-if (!viajes) {
-        viajes = [new Viaje(id = 1, destino = 'Chile', precio = 2000, cantidad = 0), new Viaje(id = 2, destino = 'Ecuador', precio = 4000, cantidad = 0), new Viaje(id = 3, destino = 'Misiones', precio = 600, cantidad = 0), new Viaje(id = 4, destino = 'Mexico', precio = 3000, cantidad = 0), new Viaje(id = 5, destino = 'Perito Moreno', precio = 1500, cantidad = 0), new Viaje(id = 6, destino = 'Peru', precio = 2000, cantidad = 0)]};
+// if (!viajes) {
+//         viajes = [new Viaje(id = 1, destino = 'Chile', precio = 2000, cantidad = 0), new Viaje(id = 2, destino = 'Ecuador', precio = 4000, cantidad = 0), new Viaje(id = 3, destino = 'Misiones', precio = 600, cantidad = 0), new Viaje(id = 4, destino = 'Mexico', precio = 3000, cantidad = 0), new Viaje(id = 5, destino = 'Perito Moreno', precio = 1500, cantidad = 0), new Viaje(id = 6, destino = 'Peru', precio = 2000, cantidad = 0)]};
 let viajesJSON = JSON.stringify(viajes);
 
 //Funciones
 let subtotal = function(precio, cantidad) {
     return precio*cantidad;
 } 
-
+traerViajes()
+async function traerViajes() {
+    viajes = await fetch('../model/data.json').then((response) => {
+        if (response.ok) {
+            return response.json();
+        }else {
+            throw new Error('Error codigo ' + response.statusText);
+        }
+    }).catch((error) => {
+        Swal.fire({
+        title: '',
+        text: 'Estamos trabajando en esto',
+        imageUrl: '../images/finalizar.jpg',
+        imageWidth: 300,
+        imageHeight: 300,
+        imageAlt: 'btn--finalizar--img',
+    })})
+}
 function agregarViaje() {
     boton1.addEventListener('click', () => {
         viajes.forEach((viaje) => {
@@ -72,7 +89,8 @@ function agregarViaje() {
     mostrarViajes()
     })
 }
-finalizar.addEventListener('click', () => {
+
+btnFinalizar.addEventListener('click', () => {
     Swal.fire({
         title: 'En desarrollo',
         text: 'Estamos trabajando en esto',
@@ -111,7 +129,7 @@ function mostrarViajes() {
 }
 
 function vaciarFunction() {
-    vaciar.addEventListener('click', () => {
+    btnVaciar.addEventListener('click', () => {
         Swal.fire({
             title: 'Estás segur@? ',
             text: "Esta acción no se podrá revertir",

@@ -4,41 +4,79 @@
         "destino": "Chile",
         "precio": 2000,
         "cantidad": 0,
-        "total": {}
+        "total": {},
+        "imagen": "../images/chile.jpg"
     },
     {
         "id": 2,
         "destino": "Ecuador",
         "precio": 4000,
         "cantidad": 0,
-        "total": {}
+        "total": {},
+        "imagen": "../images/ecuador.jpg"
     },
     {
         "id": 3,
         "destino": "Misiones",
         "precio": 600,
         "cantidad": 0,
-        "total": {}
+        "total": {},
+        "imagen": "../images/iguazu.jpg"
     },
     {
         "id": 4,
         "destino": "Mexico",
         "precio": 3000,
         "cantidad": 0,
-        "total": {}
+        "total": {},
+        "imagen": "../images/mexico.jpg"
     },
     {
         "id": 5,
         "destino": "Perito Moreno",
         "precio": 1500,
         "cantidad": 0,
-        "total": {}
+        "total": {},
+        "imagen": "../images/peritomoreno.jpg"
     },
     {
         "id": 6,
         "destino": "Peru",
         "precio": 2000,
         "cantidad": 0,
-        "total": {}
+        "total": {},
+        "imagen": "../images/peru.jpg"
+    },
+    {
+        "id": 7,
+        "destino": "Bolivia",
+        "precio": 1500,
+        "cantidad": 0,
+        "total": {},
+        "imagen": "../images/uyuni.jpg"
+    },
+    {
+        "id": 8,
+        "destino": "Alaska",
+        "precio": 7500,
+        "cantidad": 0,
+        "total": {},
+        "imagen": "../images/alaska.jpg"
+    },
+    {
+        "id": 9,
+        "destino": "Cuba",
+        "precio": 3000,
+        "cantidad": 0,
+        "total": {},
+        "imagen": "../images/cuba.jpg"
+    },
+    {
+        "id": 10,
+        "destino": "Uruguay",
+        "precio": 1500,
+        "cantidad": 0,
+        "total": {},
+        "imagen": "../images/valizas.JPG"
     }
 ]
