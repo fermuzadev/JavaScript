@@ -1,0 +1,30 @@
+body {
+    display:flex;
+}
+h1 {
+    text-align: center;
+    justify-content: center;
+    display: block;
+}
+div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+.cards{
+    display: block;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.imagen{
+    display: block;
+    width: 300px;
+}
+.boton {
+    text-align: center;
+    justify-content: center;
+}
+

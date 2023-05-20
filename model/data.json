@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "destino": "Chile",
+        "precio": 2000,
+        "cantidad": 0,
+        "total": {}
+    },
+    {
+        "id": 2,
+        "destino": "Ecuador",
+        "precio": 4000,
+        "cantidad": 0,
+        "total": {}
+    },
+    {
+        "id": 3,
+        "destino": "Misiones",
+        "precio": 600,
+        "cantidad": 0,
+        "total": {}
+    },
+    {
+        "id": 4,
+        "destino": "Mexico",
+        "precio": 3000,
+        "cantidad": 0,
+        "total": {}
+    },
+    {
+        "id": 5,
+        "destino": "Perito Moreno",
+        "precio": 1500,
+        "cantidad": 0,
+        "total": {}
+    },
+    {
+        "id": 6,
+        "destino": "Peru",
+        "precio": 2000,
+        "cantidad": 0,
+        "total": {}
+    }
+]
