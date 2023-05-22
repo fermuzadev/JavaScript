@@ -1,5 +1,7 @@
 body {
     display:flex;
+    justify-content: space-evenly;
+
 }
 h1 {
     text-align: center;
@@ -16,7 +18,7 @@ div {
     display: block;
     flex-wrap: wrap;
     text-align: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .imagen{
@@ -27,4 +29,3 @@ div {
     text-align: center;
     justify-content: center;
 }
-
