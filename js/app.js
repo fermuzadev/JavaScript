@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', flujo);
 
 //Me traigo el JSON, y llamo a la función que me genera el html dinámico
 async function traerViajes() {
-    viajes = await fetch('../model/data.json').then((response) => {
+    viajes = await fetch('https://raw.githubusercontent.com/fmuzaber/javascript/proyectoFinalv2.2/model/data.json').then((response) => {
         if (response.ok) {
             return response.json();
         }else {
