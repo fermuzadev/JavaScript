@@ -5,7 +5,7 @@
         "precio": 2000,
         "cantidad": 0,
         "total": {},
-        "imagen": "../images/chile.jpg"
+        "imagen": "https://media.traveler.es/photos/6381498d12218700bdf18723/16:9/w_2580,c_limit/Parque-Nacional-Torres-del-Paine-Chile.jpg"
     },
     {
         "id": 2,
@@ -13,7 +13,7 @@
         "precio": 4000,
         "cantidad": 0,
         "total": {},
-        "imagen": "../images/ecuador.jpg"
+        "imagen": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/5b/21/94/ecuador-funtrip.jpg?w=600&h=400&s=1"
     },
     {
         "id": 3,
@@ -21,7 +21,7 @@
         "precio": 600,
         "cantidad": 0,
         "total": {},
-        "imagen": "../images/iguazu.jpg"
+        "imagen": "https://a.travel-assets.com/findyours-php/viewfinder/images/res70/71000/71179-Devils-Throat.jpg"
     },
     {
         "id": 4,
@@ -29,7 +29,7 @@
         "precio": 3000,
         "cantidad": 0,
         "total": {},
-        "imagen": "../images/mexico.jpg"
+        "imagen": "https://www.cronista.com/files/image/415/415259/61af8f8de8c18_360_480!.jpg?s=d4f37a6bcbc07addd9ae67edfb6019b4&d=1647644463"
     },
     {
         "id": 5,
@@ -37,7 +37,7 @@
         "precio": 1500,
         "cantidad": 0,
         "total": {},
-        "imagen": "../images/peritomoreno.jpg"
+        "imagen": "https://tolkeyenpatagonia.com/wp-content/uploads/2023/01/Perito-Moreno.jpg"
     },
     {
         "id": 6,
@@ -45,7 +45,7 @@
         "precio": 2000,
         "cantidad": 0,
         "total": {},
-        "imagen": "../images/peru.jpg"
+        "imagen": "https://www.sancristobalcaja.com.ar/wp-content/uploads/2022/12/Machu-Picchu.jpg"
     },
     {
         "id": 7,
@@ -53,7 +53,7 @@
         "precio": 1500,
         "cantidad": 0,
         "total": {},
-        "imagen": "../images/uyuni.jpg"
+        "imagen": "https://lonelyplanetes.cdnstatics2.com/sites/default/files/styles/max_1300x1300/public/fotos/Bolivia_500px_108518991_Kim%20McAfee_500px.jpg?itok=v3Ax32Bl"
     },
     {
         "id": 8,
@@ -61,7 +61,7 @@
         "precio": 7500,
         "cantidad": 0,
         "total": {},
-        "imagen": "../images/alaska.jpg"
+        "imagen": "https://fotografias.larazon.es/clipping/cmsimages01/2022/03/30/A65C77F7-E74B-4798-827A-F2CD99F20A7B/98.jpg?crop=1920,1080,x0,y100&width=1900&height=1069&optimize=low&format=webply"
     },
     {
         "id": 9,
@@ -69,7 +69,7 @@
         "precio": 3000,
         "cantidad": 0,
         "total": {},
-        "imagen": "../images/cuba.jpg"
+        "imagen": "https://www.ngenespanol.com/wp-content/uploads/2023/02/estos-son-los-requisitos-para-viajar-a-cuba-siendo-mexicano.jpg"
     },
     {
         "id": 10,
@@ -77,6 +77,6 @@
         "precio": 1500,
         "cantidad": 0,
         "total": {},
-        "imagen": "../images/valizas.JPG"
+        "imagen": "https://www.zonaprop.com.ar/noticias/wp-content/uploads/2022/01/pedro-slinger-ehFgttlFJNA-unsplash.jpg"
     }
 ]
