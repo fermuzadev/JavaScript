@@ -1,7 +1,5 @@
 body {
     display:flex;
-    justify-content: space-evenly;
-
 }
 h1 {
     text-align: center;
@@ -15,10 +13,10 @@ div {
 
 }
 .cards{
-    display: inline-block;
+    display: block;
     flex-wrap: wrap;
     text-align: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .imagen{
@@ -29,3 +27,4 @@ div {
     text-align: center;
     justify-content: center;
 }
+
