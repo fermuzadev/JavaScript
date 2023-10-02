@@ -1,8 +1,8 @@
 let precio;
-let cantidad;
-let descripcion;
+let stock;
+let nombre;
 let total = 0;
-let entrada;
+let entrada = "";
 
 //Funcion Explicita de Bienvenida
 function bienvenido() {
@@ -17,29 +17,46 @@ return valor;
 }
 }
 bienvenido();
-
-while (entrada != "N" ) {
+do  {
     precio = parseFloat(prompt("Ingrese el precio del artículo"));
     validarEntrada(precio);
     // if (precio < 0 || precio == "") {
     //     alert("Ingrese un numero mayor a 0");
     //     precio = NaN;
     // } else {
-    cantidad = parseInt(prompt("Ingrese la cantidad"));
-    validarEntrada(cantidad);
+    stock = parseInt(prompt("Ingrese la cantidad"));
+    validarEntrada(stock);
     // Una arrow para total
     const funcionTotalArrow = (precio, cantidad) => {
-    total = total + (precio * cantidad);};
-    funcionTotalArrow(precio, cantidad);
+    total = total + (precio * stock)};
+    funcionTotalArrow(precio, stock);
     // if (cantidad < 0 || cantidad == "") {
     //     alert("Ingrese un numero mayor a 0");
     //     cantidad == NaN;
     // }
     
-    descripcion = prompt("Ingrese la descripción del Producto");
-    validarEntrada(descripcion);
-    alert("El ingreso es  \n"  + 
-    "Precio|Cantidad|Descripcion|Total \n" + 
-    "$"  + precio + "   | " + cantidad + "u         " + "   |" +  descripcion + "    |" +"$" + total);
+    nombre = prompt("Ingrese la descripción del Producto");
+    validarEntrada(nombre);
     entrada = prompt("Desea continuar? \n" + "INGRESE N PARA SALIR o cualquier entrada para Seguir").toUpperCase();
-}
+} while (entrada != "N" ) ;
+alert("El ingreso es  \n"  + 
+"Precio|Cantidad|Descripcion|Total \n" + 
+"$"  + precio + "   | " + stock + "u         " + "   |" +  nombre + "    |" +"$" + total);
+console.log(("El ingreso es  \n"  + 
+"Precio|Cantidad|Descripcion|Total \n" + 
+"$"  + precio + "   | " + stock + "u         " + "   |" +  nombre + "    |" +"$" + total));
+
+
+const producto1 = new Producto("Camiseta", "Camiseta", 10, 30000);
+const producto2 = new Producto("Short", "Short", 100, 10000);
+const producto3 = new Producto("Zapatilla", "Zapatillas", 10, 50000);
+const producto4 = new Producto("Pelota", "Pelotas", 10, 5000);
+
+
+console.log(producto1);
+console.log(producto2);
+console.log(producto3);
+console.log(producto4);
+
+producto1.actualizarStockReposición(prompt("ingrese un nro de reposición"));
+producto1.actualizarStockVenta(prompt("Ingrese un nro de venta"));
