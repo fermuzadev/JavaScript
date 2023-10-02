@@ -1,57 +1,42 @@
-let total = 0;
-let entrada = "";
-let productos = [];
+let carrito = [];
 
-function cargarItem() {
+function cargarUnItem() {
+  const nuevoItem = new Item();
+  nuevoItem.nombre = prompt("Ingrese el nombre del producto");
+  nuevoItem.precio = parseFloat(prompt("Ingrese un precio"));
+  nuevoItem.cantidad = Number(prompt("Ingrese el stock"));
+  nuevoItem.marca = prompt("Ingrese la marca");
 
-    const nuevoItem = new Item();
-    nuevoItem.nombre = prompt("Ingrese el nombre del articulo");
-    nuevoItem.tipo = prompt("Ingrese el tipo de producto");
-    nuevoItem.stock = Number(prompt("Ingrese el stock del articulo"));
-    nuevoItem.precio = parseFloat(prompt("Ingrese su precio unitario"));
-
-    productos.push(nuevoItem);
+  carrito.push(nuevoItem);
 }
 
-function bienvenido() {
-    alert("Bienvenido a la segunda Entrega del Proyecto Final en JS");
-}
-
-const cargaDatos = () => {
-    let seguir;
-    do {
-        cargarItem();
-        seguir = prompt("Desea ingresar mas articulos? \n s/n");
-    }while (seguir == 's');
-}
+const cargarItems = () => {
+  let seguir;
+  do {
+    cargarUnItem();
+    seguir = prompt("Desea ingresar otro item si/no");
+  } while (seguir == "si");
+};
 
 function mostrarCarrito() {
-    let salida = '';
-    productos.forEach((item) => {
-        salida = salida + `Nombre : ${item.nombre} \n Tipo : ${item.tipo} \n Stock : ${item.stock} \n Precio: ${item.precio}\n\n`;
-    });
-    alert(salida);
+  let ticket = "";
+  let totalTicket = 0;
+  carrito.forEach((item) => {
+    ticket =
+      ticket +
+      `Nombre : ${item.nombre} \n Precio: ${item.precio}  \n Cantidad: ${
+        item.cantidad
+      } \n Marca: ${item.marca} \n Sutbtotal : ${item.subTotal()} \n\n`;
+  });
+
+  totalTicket =
+    totalTicket +
+    carrito.reduce((total, item) => {
+      return total + item.subTotal();
+    }, 0);
+
+  alert(ticket + `Total : ${totalTicket} `);
 }
 
-function buscarProducto () {
-    let busqueda;
-    busqueda = prompt('Ingrese un articulo a buscar en el carrito');
-    const encontrado = productos.find((encontrado) => {
-        if (productos.nombre === 'busqueda')
-        {
-            return true;
-            alert("El producto esta en la lista");
-        }else {
-            return false;
-            alert("El producto no se cargo");
-        }
-});
-}
-
-bienvenido();
-cargaDatos();
-buscarProducto();
+cargarItems();
 mostrarCarrito();
-productos.forEach((item)=> {
-    console.log(item);
-});
