@@ -15,7 +15,7 @@ div {
 
 }
 .cards{
-    display: block;
+    display: inline-block;
     flex-wrap: wrap;
     text-align: center;
     justify-content: space-evenly;
