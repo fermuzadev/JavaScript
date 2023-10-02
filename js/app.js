@@ -1,4 +1,6 @@
-// DOM 
+//DOM
+const listaViajes = document.querySelector('#listaViajes')
+const btnVaciar = document.getElementById('btnvaciar');
 const boton1 = document.getElementById('boton1');
 const boton2 = document.getElementById('boton2');
 const boton3 = document.getElementById('boton3');
@@ -6,39 +8,65 @@ const boton4 = document.getElementById('boton4');
 const boton5 = document.getElementById('boton5');
 const boton6 = document.getElementById('boton6');
 const input = document.getElementById('input');
-const btnVaciar = document.getElementById('btnvaciar');
 const btnFinalizar = document.getElementById('btnfinalizar')
 const tabla = document.getElementById('viajes');
 
-//Definicion de Array
-
-let viajes = JSON.parse(localStorage.getItem('viajes'));
-// if (!viajes) {
-//         viajes = [new Viaje(id = 1, destino = 'Chile', precio = 2000, cantidad = 0), new Viaje(id = 2, destino = 'Ecuador', precio = 4000, cantidad = 0), new Viaje(id = 3, destino = 'Misiones', precio = 600, cantidad = 0), new Viaje(id = 4, destino = 'Mexico', precio = 3000, cantidad = 0), new Viaje(id = 5, destino = 'Perito Moreno', precio = 1500, cantidad = 0), new Viaje(id = 6, destino = 'Peru', precio = 2000, cantidad = 0)]};
-let viajesJSON = JSON.stringify(viajes);
-
 //Funciones
+document.addEventListener('DOMContentLoaded', () => {
+    traerViajes();
+    agregarViaje();
+    vaciarFunction();
+})
+
 let subtotal = function(precio, cantidad) {
     return precio*cantidad;
 } 
-traerViajes()
+
 async function traerViajes() {
     viajes = await fetch('../model/data.json').then((response) => {
         if (response.ok) {
             return response.json();
         }else {
-            throw new Error('Error codigo ' + response.statusText);
+            throw new Error(response.statusText);
         }
+        
     }).catch((error) => {
         Swal.fire({
-        title: '',
+        title: error,
         text: 'Estamos trabajando en esto',
         imageUrl: '../images/finalizar.jpg',
         imageWidth: 300,
         imageHeight: 300,
         imageAlt: 'btn--finalizar--img',
-    })})
+        })
+    })
+    mapearViajes();
+    
 }
+function mapearViajes() {
+    let contador = 1;
+    let fila = document.createElement('div');
+    fila.classList.add('cards');
+    viajes.forEach((viaje)=> {
+        if (contador <= 3) {
+            fila.innerHTML += `
+            <div class="cards">
+                <img src=${viaje.imagen} class="fluid imagen" alt="${viaje.destino}">
+                <button class="btn-info btn" id="boton${viaje.id}" type="button">Agregar</button>
+            </div>
+            `;
+
+            contador++;
+        } else {
+            listaViajes.appendChild(fila);
+            fila = document.createElement('div');
+            fila.classList.add('cards');
+            contador = 1;
+        }
+    });
+    listaViajes.appendChild(fila);
+}
+
 function agregarViaje() {
     boton1.addEventListener('click', () => {
         viajes.forEach((viaje) => {
@@ -88,6 +116,7 @@ function agregarViaje() {
         })
     mostrarViajes()
     })
+    traerViajes();
 }
 
 btnFinalizar.addEventListener('click', () => {
@@ -102,7 +131,6 @@ btnFinalizar.addEventListener('click', () => {
 })
 function mostrarViajes() {
     tabla.innerHTML = "";
-    let contador = 1;
     viajes.forEach((viaje) => {
         if (viaje.cantidad > 0) {
         tabla.innerHTML += `
@@ -114,7 +142,6 @@ function mostrarViajes() {
             <td>${subtotal(viaje.precio,viaje.cantidad)}</td>
         </tr>
         `;
-        contador++;
     }
     });
     tr = document.createElement('tr');
@@ -153,12 +180,10 @@ function vaciarFunction() {
         })
         })    
 }
-agregarViaje();
-vaciarFunction();
+
 
 function actualizarStorage() {
     localStorage.setItem('viajes', JSON.stringify(viajes))
-    console.log(viajes)
     viajes = JSON.parse(localStorage.getItem('viajes'))
     Swal.fire({
         title: 'LocalStorage actualizado',
